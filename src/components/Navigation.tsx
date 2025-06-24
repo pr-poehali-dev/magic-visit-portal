@@ -11,25 +11,25 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-orange-50/95 to-amber-50/95 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b border-orange-100">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl">📚</span>
-            <span className="text-xl font-bold text-purple-600">
+            <span className="text-2xl">🏠</span>
+            <span className="text-xl font-bold text-amber-800">
               В гостях у сказки
             </span>
           </Link>
 
-          <div className="flex space-x-1">
+          <div className="flex space-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
+                className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition-all duration-200 ${
                   location.pathname === item.path
-                    ? "bg-purple-100 text-purple-700"
-                    : "text-gray-600 hover:bg-gray-100"
+                    ? "bg-orange-200 text-amber-800 shadow-md"
+                    : "text-amber-700 hover:bg-orange-100/70 hover:shadow-sm"
                 }`}
               >
                 <Icon name={item.icon} size={16} />
